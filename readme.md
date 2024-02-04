@@ -71,13 +71,24 @@
 
 ```js
 <script src="dist/reveal.js"></script>
+	<script src="plugin/math/math.js"></script>
 	<script src="plugin/notes/notes.js"></script>
 	<script src="plugin/markdown/markdown.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
 	<script>
 		Reveal.initialize({
+			// 数学公式显示
+			hash: true,
+			math: {
+				mathjax:
+					"https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js", // MathJax.js文件保存在math文件夹下
+				config: "TeX-AMS_HTML-full",
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } },
+			},
+
 			// 代码语法高亮
-			plugins: [RevealMarkdown, RevealHighlight],
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
 
 			// 在右下角显示控制面板
 			controls: true,
@@ -339,3 +350,16 @@
 				<p class="fragment">让我住进你的心里</p>
 			</section>
 ```
+
+### 第八页
+
+![](https://img2024.cnblogs.com/blog/2282419/202402/2282419-20240204225736989-356455242.png)
+
+```html
+<section>
+				\[
+				F = G \cdot \frac{m_1 \cdot m_2}{r^2} \, \text{N}
+				\]
+			</section>
+```
+

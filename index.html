@@ -50,9 +50,15 @@
 				</section>
 			</section>
 
+			<section>
+				\[
+				F = G \cdot \frac{m_1 \cdot m_2}{r^2} \, \text{N}
+				\]
+			</section>
+
 			<section data-background-video="./video/goforward.mp4" data-background-video-loop
 				data-background-video-muted>
-				
+
 				<h1>Freedom</h1>
 			</section>
 
@@ -82,17 +88,11 @@
 					---
 					## Slide 2
 					```Cpp
-						#include <bits/stdc++.h>
+					#include <bits /stdc++.h>
 						using namespace std;
-						
+
 						int main() {
-						cout << "hello world..." <<endl; 
-						return 0; 
-						}
-					```
-					---
-					## Slide 3
-					<!-- ...写一些内容 -->
+						cout << "hello world..." <<endl; return 0; } ``` --- ## Slide 3 <!-- ...写一些内容 -->
 				</textarea>
 			</section>
 
@@ -113,13 +113,24 @@
 	</div>
 
 	<script src="dist/reveal.js"></script>
+	<script src="plugin/math/math.js"></script>
 	<script src="plugin/notes/notes.js"></script>
 	<script src="plugin/markdown/markdown.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
 	<script>
 		Reveal.initialize({
+			// 数学公式显示
+			hash: true,
+			math: {
+				mathjax:
+					"https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js", // MathJax.js文件保存在math文件夹下
+				config: "TeX-AMS_HTML-full",
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } },
+			},
+
 			// 代码语法高亮
-			plugins: [RevealMarkdown, RevealHighlight],
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
 
 			// 在右下角显示控制面板
 			controls: true,
